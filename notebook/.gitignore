@@ -1,0 +1,8 @@
+# Ignore node_modules and Python virtual environments
+node_modules/
+.venv/
+__pycache__/
+backend/__pycache__/
+*.log
+*.zip
+*.tar.gz

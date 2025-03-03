@@ -1,0 +1,173 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* 标题美化 */
+.dag-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+}
+
+.dag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh; /* 让 DAG 画布填满屏幕 */
+  padding: 10px;
+}
+
+.dag-visualizer {
+  width: 90%;
+  height: 80vh;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.save-button {
+  margin-top: 10px;
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.editor-panel {
+  position: fixed;   /* 固定在页面 */
+  bottom: 0;         /* 在底部 */
+  left: 0;
+  width: 100%;       /* 占满宽度 */
+  background: white;
+  padding: 15px;
+  border-top: 2px solid #ccc;
+  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;   /* 自动换行 */
+  justify-content: space-around;
+  align-items: center;
+  font-size: 14px;
+  z-index: 1000;     /* 确保在最上层 */
+}
+
+/* 让输入框更清晰可见 */
+.editor-panel input {
+  width: auto;
+  min-width: 150px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* 节点样式 */
+.react-flow__node {
+  background-color: rgb(223, 223, 223);
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 选中的节点样式 */
+.react-flow__node-selected {
+  border-color: #ffffff !important;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* 连接线 */
+.react-flow__edge-path {
+  stroke: #5c5c5c !important;
+  stroke-width: 1;
+}
+
+/* 箭头样式 */
+.react-flow__edge-marker {
+  fill: #007bff !important;
+}
+
+/* 按钮美化：编辑器底部按钮 */
+.editor-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.editor-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editor-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.editor-buttons button:nth-child(2) {
+  background-color: #ff6f61;
+}
+
+.editor-buttons button:nth-child(2):hover {
+  background-color: #d9534f;
+}
+
+.editor-buttons button:last-child {
+  background-color: #6c757d;
+}
+
+.editor-buttons button:last-child:hover {
+  background-color: #5a6268;
+}
+
+/* 新增：添加节点/边的按钮样式容器 */
+.add-buttons-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 新增：添加节点/边的按钮 */
+/* 强制覆盖所有可能的默认按钮样式 */
+.add-buttons-container button {
+  background-color: #2c2c2c !important; /* 绿色背景 */
+  color: #fff !important; /* 文字颜色 */
+  padding: 8px 12px !important; /* 让按钮更大 */
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 14px !important; /* 适当增加字体大小 */
+  font-weight: bold !important;
+  cursor: pointer !important;
+  transition: background 0.3s ease !important;
+}
+
+.add-buttons-container button:hover {
+  background-color: #218838 !important;
+}
+
+/* 确保按钮容器正确生效 */
+.add-buttons-container {
+  display: flex !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  margin-bottom: 20px !important;
+}
